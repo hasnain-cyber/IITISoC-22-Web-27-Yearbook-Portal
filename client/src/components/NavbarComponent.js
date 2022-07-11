@@ -11,7 +11,6 @@ const NavbarComponent = () => {
 
   const handleLoginSuccess = (data) => {
     dispatch(login(data.profileObj));
-    navigator("/dashboard");
   };
 
   const handleLogoutSuccess = () => {

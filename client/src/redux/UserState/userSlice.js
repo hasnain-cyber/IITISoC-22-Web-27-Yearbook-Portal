@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 export const userSlice = createSlice({
   name: "user",
@@ -20,6 +21,13 @@ export const userSlice = createSlice({
           ...action.payload,
         })
       );
+
+      // send this request at every log in to create user if not already present.
+      axios
+        .post(process.env.REACT_APP_API_URL + "createNewUser")
+        .catch((err) => {
+          console.log(err);
+        });
     },
 
     logout: (state) => {

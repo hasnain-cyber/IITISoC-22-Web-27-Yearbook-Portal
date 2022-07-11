@@ -10,7 +10,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(initialize());
-    console.log('here');
   }, [dispatch]);
 
   return (
